@@ -15,7 +15,8 @@ class BankAccount:
             print(self.account_balance)
         else:
             print(f"Sorry, {self.name} your account balance is too low!")    
-            
+ 
+           
 acc = BankAccount("savings", 101)
 acc1 = BankAccount("Investment", 102)
 acc.deposit(50000)
@@ -23,6 +24,22 @@ acc1.deposit(300000)
 acc1.deposit(500000)
 acc.withdrawal(100000)
 
+class Savings(BankAccount):
+    def __init__(self,  interest_rate):
+        BankAccount.__init__(self,'savings', 101)
+        self.interest_rate = interest_rate
+    def apply_interest(self):
+        new = self.account_balance * self.interest_rate * 1
+        print(new)
 
+    
+# interest = Savings() 
+# interest.apply_interest(10)       
+     
+        
+        
+
+
+            
         
         
